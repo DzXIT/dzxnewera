@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DzXNewEra 👑 | Aimtrick Free Fire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #E53935; /* Red utama */
+            --secondary: #B71C1C; /* Dark red */
+            --dark: #121212; /* Dark background */
+            --light: #FFFFFF; /* White text */
+            --gray: #424242; /* Gray untuk detail */
+            --accent: #FF5252; /* Light red untuk aksen */
+            --gradient: linear-gradient(135deg, #E53935 0%, #B71C1C 100%);
+            --gradient-light: linear-gradient(135deg, #FF5252 0%, #E53935 100%);
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(229, 57, 53, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(183, 28, 28, 0.08) 0%, transparent 40%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(229, 57, 53, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 15px rgba(229, 57, 53, 0.3);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .brand-name {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+        
+        .brand-name span {
+            color: var(--primary);
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 3px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 40px 0 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--light);
+            font-weight: 300;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .products-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .product-card {
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 48%;
+            max-width: 550px;
+            min-height: 600px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(229, 57, 53, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+        
+        @media (max-width: 1200px) {
+            .product-card {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        @media (min-width: 1201px) {
+            .product-card.vip {
+                width: 65%;
+                max-width: 65%;
+                margin: 0 auto;
+            }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(229, 57, 53, 0.2);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
+        }
+        
+        .product-badge.vip {
+            background: linear-gradient(135deg, #FFD700 0%, #FF9800 100%);
+            color: #000;
+            font-weight: 800;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .product-header {
+            padding: 30px;
+            background: rgba(229, 57, 53, 0.05);
+            border-bottom: 1px solid rgba(229, 57, 53, 0.1);
+        }
+        
+        .product-name {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .product-name span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .product-name span.vip {
+            background: linear-gradient(135deg, #FFD700 0%, #FF9800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .product-version {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        
+        .product-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: var(--light);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .product-price.vip {
+            background: linear-gradient(135deg, #FFD700 0%, #FF9800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+        }
+        
+        .product-features {
+            padding: 30px;
+        }
+        
+        .product-features ul {
+            list-style: none;
+        }
+        
+        .product-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .product-features li i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1rem;
+            background: rgba(229, 57, 53, 0.1);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-features li i.vip {
+            color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .product-footer {
+            padding: 0 30px 30px;
+        }
+        
+        .btn-buy {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-buy.vip {
+            background: linear-gradient(135deg, #FFD700 0%, #FF9800 100%);
+            color: #000;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-buy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(229, 57, 53, 0.4);
+        }
+        
+        .btn-buy.vip:hover {
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+        
+        .btn-buy:active {
+            transform: translateY(0);
+        }
+        
+        /* Article Section */
+        .article-section {
+            background: rgba(183, 28, 28, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 1000px;
+            border: 1px solid rgba(229, 57, 53, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .article-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .article-content {
+            color: #ddd;
+            line-height: 1.7;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(229, 57, 53, 0.1);
+        }
+        
+        .contact h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--light);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .contact-card {
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid rgba(229, 57, 53, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(229, 57, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 0 auto 20px;
+        }
+        
+        .contact-text {
+            font-size: 1rem;
+            color: #ccc;
+        }
+        
+        .contact-text strong {
+            color: var(--light);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .guarantee {
+            background: rgba(229, 57, 53, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 4px solid var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(18, 18, 18, 0.95);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(229, 57, 53, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .products-container {
+                flex-direction: column;
+            }
+            
+            .product-card {
+                width: 100%;
+            }
+            
+            .article-section {
+                padding: 25px 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .product-card, .article-section, .contact-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .product-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .product-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        /* Watermark Effect */
+        .watermark {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.03);
+            font-size: 6rem;
+            font-weight: 900;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        /* Gradasi merah dengan shadow tipis */
+        .gradient-red {
+            background: var(--gradient);
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.25);
+        }
+        
+        .gradient-red-light {
+            background: var(--gradient-light);
+            box-shadow: 0 4px 15px rgba(255, 82, 82, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="https://files.catbox.moe/zrkrj6.jpg" alt="DzXNewEra Logo">
+                </div>
+                <div>
+                    <div class="brand-name">DzX<span>NewEra</span> 👑</div>
+                    <div class="tagline">Premium Free Fire Enhancement</div>
+                </div>
+            </div>
+            <div class="header-tag">
+                <span style="color: var(--primary); font-weight: 600;">VIP • SAFE • ANTIBAN</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Tingkatkan <span>Headshot</span> Anda di Free Fire</h1>
+            <p>Dengan file premium dari <span class="highlight">DzXNewEra</span>, presentase headshot Anda akan meningkat secara signifikan.</p>
+            <p>Semua file sudah diuji dan <span class="highlight">100% aman (Anti-Ban/Surcin)</span> untuk digunakan.</p>
+            <p>Instalasi mudah via aplikasi <span class="highlight">ZArchiver</span>.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Produk Premium</h2>
+            
+            <div class="products-container">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="watermark"></div>
+                    <div class="product-badge">basic</div>
+                    <div class="product-header">
+                        <h3 class="product-name">@Aimtrick <span>Basic</span></h3>
+                        <div class="product-version">v1.0 • Free Fire Enhancement</div>
+                        <div class="product-price">Rp 15.000</div>
+                    </div>
+                    <div class="product-features">
+                        <ul>
+                            <li><i class="fas fa-bullseye"></i> Membuat headshot lebih mudah</li>
+                            <li><i class="fas fa-desktop"></i> Screen lebih smooth</li>
+                            <li><i class="fas fa-sliders-h"></i> DPI auto settings aktif</li>
+                            <li><i class="fas fa-crosshairs"></i> Aim stabil auto settings</li>
+                            <li><i class="fas fa-tachometer-alt"></i> High settings sensitivity</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/6281935928562?text=Halo%20DzXNewEra%20👑%2C%20saya%20ingin%20membeli%20%40Aimtrick%20Basic%20seharga%20Rp%2015.000" class="btn-buy" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BELI SEKARANG
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="watermark"></div>
+                    <div class="product-badge">premium</div>
+                    <div class="product-header">
+                        <h3 class="product-name">@Aimtrick <span>Private</span></h3>
+                        <div class="product-version">v1.0 • Advanced Free Fire Enhancement</div>
+                        <div class="product-price">Rp 50.000</div>
+                    </div>
+                    <div class="product-features">
+                        <ul>
+                            <li><i class="fas fa-crown"></i> Semua fitur private included</li>
+                            <li><i class="fas fa-tachometer-alt"></i> Sensitivity sensi enhancement</li>
+                            <li><i class="fas fa-crosshairs"></i> DragShoot AimX technology</li>
+                            <li><i class="fas fa-arrows-alt"></i> Advanced aim stabilization</li>
+                            <li><i class="fas fa-chart-line"></i> Higher headshot percentage</li>
+                            <li><i class="fas fa-headset"></i> Priority customer support</li>
+                            <li><i class="fas fa-shield-alt"></i> Ultimate Safety & Anti-Ban</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/6281935928562?text=Halo%20DzXNewEra%20👑%2C%20saya%20ingin%20membeli%20%40Aimtrick%20Private%20seharga%20Rp%2050.000" class="btn-buy" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BELI SEKARANG
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 - VIP TOOLS -->
+                <div class="product-card vip">
+                    <div class="watermark"></div>
+                    <div class="product-badge vip">VIP</div>
+                    <div class="product-header">
+                        <h3 class="product-name">VIP TOOLS <span class="vip">V1.0</span></h3>
+                        <div class="product-version">Ultimate Free Fire Enhancement</div>
+                        <div class="product-price vip">Rp 130.000</div>
+                    </div>
+                    <div class="product-features">
+                        <ul>
+                            <li><i class="fas fa-bullseye vip"></i> Higher headshot percentage</li>
+                            <li><i class="fas fa-desktop vip"></i> Screen more smooth</li>
+                            <li><i class="fas fa-sliders-h vip"></i> Sensitivity sensi enhancement</li>
+                            <li><i class="fas fa-crosshairs vip"></i> Advanced aim stabilization</li>
+                            <li><i class="fas fa-cogs vip"></i> Sensi Setting perfect</li>
+                            <li><i class="fas fa-mouse-pointer vip"></i> Easy to point aim</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/6281935928562?text=Halo%20DzXNewEra%20👑%2C%20saya%20ingin%20membeli%20VIP%20TOOLS%20V1.0%20seharga%20Rp%20130.000" class="btn-buy vip" target="_blank">
+                            <i class="fab fa-whatsapp"></i> BELI SEKARANG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Section -->
+    <section class="container">
+        <div class="article-section">
+            <h2 class="article-title">Mengapa Memilih DzXNewEra?</h2>
+            <div class="article-content">
+                <p><strong>DzXNewEra</strong> adalah penyedia file enhancement premium untuk Free Fire yang sudah terpercaya oleh ribuan pengguna. Dengan teknologi terkini, kami menghadirkan solusi untuk meningkatkan performa gameplay Anda.</p>
+                
+                <p><strong>Keunggulan Produk Kami:</strong></p>
+                <ul>
+                    <li><strong>100% Aman & Anti-Ban:</strong> Semua file telah melalui proses testing dan dinyatakan aman untuk akun Free Fire Anda.</li>
+                    <li><strong>Peningkatan Signifikan:</strong> Headshot percentage meningkat hingga 68% dengan fitur-fitur premium.</li>
+                    <li><strong>Instalasi Mudah:</strong> Cukup menggunakan aplikasi ZArchiver yang tersedia di Play Store.</li>
+                    <li><strong>Update Berkala:</strong> File selalu diperbarui mengikuti update terbaru dari Free Fire.</li>
+                    <li><strong>Support 24/7:</strong> Tim support kami siap membantu Anda jika mengalami kendala.</li>
+                </ul>
+                
+                <p><strong>Cara Kerja:</strong> File enhancement kami bekerja dengan mengoptimasi setting internal game untuk memberikan respons yang lebih cepat, akurasi yang lebih tinggi, dan pengalaman gameplay yang lebih smooth.</p>
+                
+                <p><strong>Catatan Penting:</strong> Produk ini ditujukan untuk meningkatkan pengalaman bermain dan tidak merusak sistem game. Selalu ikuti petunjuk instalasi yang diberikan untuk hasil maksimal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h3>Hubungi Kami</h3>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>WhatsApp</strong>
+                        <p>081935928562</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Klik tombol BELI untuk langsung chat</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>Email</strong>
+                        <p>dzzxiterz99@gmail.com</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Untuk pertanyaan detail</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="guarantee">
+                <p><i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 10px;"></i> <strong>Garansi 100%:</strong> Semua file aman, teruji, dan sudah digunakan oleh ribuan player Free Fire. Instalasi mudah dengan panduan step-by-step yang akan diberikan setelah pembelian.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="brand-name">DzX<span>NewEra</span> 👑</div>
+                <div class="tagline">Premium Free Fire Enhancement Solutions</div>
+                <div class="copyright">
+                    &copy; 2026 DzXNewEra. All rights reserved. | Free Fire is a registered trademark of Garena
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi untuk elemen saat di-scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Terapkan animasi pada semua elemen yang ingin dianimasi
+        document.querySelectorAll('.product-card, .article-section, .contact-card').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+        
+        // Efek hover untuk tombol
+        document.querySelectorAll('.btn-buy').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+                if(this.classList.contains('vip')) {
+                    this.style.boxShadow = '0 8px 25px rgba(255, 215, 0, 0.5)';
+                } else {
+                    this.style.boxShadow = '0 8px 20px rgba(229, 57, 53, 0.4)';
+                }
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                if(this.classList.contains('vip')) {
+                    this.style.boxShadow = '0 5px 20px rgba(255, 215, 0, 0.4)';
+                } else {
+                    this.style.boxShadow = '0 5px 15px rgba(229, 57, 53, 0.3)';
+                }
+            });
+            
+            btn.addEventListener('mousedown', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
